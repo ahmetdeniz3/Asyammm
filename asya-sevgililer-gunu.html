@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asya'ya Özel 💝</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: #fff;
+        }
+
+        .heart {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: #ff6b9d;
+            transform: rotate(45deg);
+            animation: fall linear infinite;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ff6b9d;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+
+        .heart::after {
+            top: 0;
+            left: -10px;
+        }
+
+        @keyframes fall {
+            0% {
+                opacity: 0;
+                top: -10%;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                top: 110%;
+            }
+        }
+
+        /* Lilyum çiçekleri */
+        .lily {
+            position: fixed;
+            font-size: 80px;
+            opacity: 0.8;
+            z-index: 5;
+            animation: float 6s ease-in-out infinite;
+            filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.3));
+        }
+
+        .lily-left-top {
+            top: 8%;
+            left: 2%;
+            animation-delay: 0s;
+        }
+
+        .lily-left-middle {
+            top: 45%;
+            left: 1%;
+            animation-delay: 2s;
+        }
+
+        .lily-left-bottom {
+            bottom: 12%;
+            left: 3%;
+            animation-delay: 4s;
+        }
+
+        .lily-right-top {
+            top: 12%;
+            right: 3%;
+            animation-delay: 1s;
+        }
+
+        .lily-right-middle {
+            top: 50%;
+            right: 2%;
+            animation-delay: 3s;
+        }
+
+        .lily-right-bottom {
+            bottom: 15%;
+            right: 4%;
+            animation-delay: 5s;
+        }
+        
+        .lily-center-top {
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            animation-delay: 1.5s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-25px) rotate(8deg);
+            }
+        }
+
+        /* Mobilde lilyumları küçült ama göster */
+        @media (max-width: 768px) {
+            .lily {
+                font-size: 50px;
+                opacity: 0.6;
+            }
+            .lily-center-top {
+                display: none;
+            }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #ffd1dc, #ffb6c1, #ff69b4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            font-size: 1.3em;
+            color: #ffe4e1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .main-message {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            animation: fadeInUp 1s ease 0.3s both;
+            color: #333;
+        }
+
+        .main-message h2 {
+            color: #c44569;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .main-message p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #555;
+            text-align: center;
+        }
+
+        .love-letters {
+            display: grid;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .letter-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: #333;
+            animation: fadeInUp 1s ease both;
+        }
+
+        .letter-card:nth-child(1) { animation-delay: 0.5s; }
+        .letter-card:nth-child(2) { animation-delay: 0.6s; }
+        .letter-card:nth-child(3) { animation-delay: 0.7s; }
+
+        .letter-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .letter-card h3 {
+            color: #c44569;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .letter-card p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .daily-quote-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            animation: fadeInUp 1s ease 0.8s both;
+            color: #333;
+            text-align: center;
+        }
+
+        .daily-quote-section h2 {
+            color: #c44569;
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        .quote-display {
+            font-size: 1.3em;
+            font-style: italic;
+            color: #555;
+            padding: 30px;
+            border-left: 4px solid #ff69b4;
+            background: rgba(255, 182, 193, 0.1);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quote-controls {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .day-selector {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .day-selector input {
+            padding: 10px 15px;
+            border-radius: 10px;
+            border: 2px solid #c44569;
+            font-size: 1em;
+            width: 100px;
+            text-align: center;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #ffe4e1;
+            animation: fadeIn 2s ease;
+        }
+
+        .footer p {
+            font-size: 1.2em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+            
+            .main-message, .daily-quote-section {
+                padding: 25px;
+            }
+            
+            .letter-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Lilyum çiçekleri -->
+    <div class="lily lily-center-top">🌺</div>
+    <div class="lily lily-left-top">🌺</div>
+    <div class="lily lily-left-middle">🌸</div>
+    <div class="lily lily-left-bottom">🌺</div>
+    <div class="lily lily-right-top">🌸</div>
+    <div class="lily lily-right-middle">🌺</div>
+    <div class="lily lily-right-bottom">🌸</div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Asya'ya Özel 💝</h1>
+            <p>Sevgililer Günün Kutlu Olsun!</p>
+        </div>
+
+        <div class="main-message">
+            <h2>En Değerli Hazinem 💕</h2>
+            <p>
+                Hayatım, her gün seninle geçirdiğim her an benim için bir mucize. 
+                Gülüşün güneşimi, sesini duymak en güzel melodim. 
+                Seninle olmak, dünyanın en şanslı insanı olmak demek. 
+                Seni seviyorum, bugün de, yarın da, her zaman...
+            </p>
+        </div>
+
+        <div class="love-letters">
+            <div class="letter-card">
+                <h3>🌺 Sabah Mesajım</h3>
+                <p>
+                    Her sabah gözlerimi açtığımda aklıma gelen ilk şey sensin. 
+                    Günaydın demek için sabırsızlanıyorum çünkü sen benim günümü aydınlatan güneşimsin.
+                </p>
+            </div>
+
+            <div class="letter-card">
+                <h3>🌸 Neden Seni Seviyorum</h3>
+                <p>
+                    Seni sevmemin binlerce nedeni var ama en önemlisi, benimle olduğun için beni daha iyi bir insan yapman. 
+                    Seninle ben, daha mutlu, daha güçlü, daha tamamım.
+                </p>
+            </div>
+
+            <div class="letter-card">
+                <h3>🌺 Gece Mesajım</h3>
+                <p>
+                    Gözlerini kapatmadan önce bilmeni isterim ki, sen benim dünyamın en değerli insanısın. 
+                    İyi geceler aşkım, rüyalarında bile yanındayım.
+                </p>
+            </div>
+        </div>
+
+        <div class="daily-quote-section">
+            <h2>365 Gün, 365 Güzel Söz 🎁</h2>
+            <div class="quote-display" id="quoteDisplay">
+                Yılın her günü için sana özel bir söz...
+            </div>
+            <div class="quote-controls">
+                <button class="btn" onclick="showTodayQuote()">📅 Bugünün Sözü</button>
+                <button class="btn" onclick="showRandomQuote()">🎲 Rastgele Söz</button>
+            </div>
+            <div class="day-selector">
+                <label style="color: #c44569; font-weight: bold;">Gün seç:</label>
+                <input type="number" id="dayInput" min="1" max="365" placeholder="1-365">
+                <button class="btn" onclick="showDayQuote()">Göster</button>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>❤️ Seni Sonsuza Kadar Seviyorum ❤️</p>
+        </div>
+    </div>
+
+    <script>
+        // 365 günlük romantik sözler
+        const dailyQuotes = [
+            "Seninle her an, bir rüya gibi güzel.",
+            "Gülüşün, kalbimin en sevdiği melodi.",
+            "Sen benim için yazılmış en güzel hikayesin.",
+            "Her bakışında kayboluyorum, her seferinde yeniden buluyorum kendimi.",
+            "Seninle olmak, cennette yaşamak gibi.",
+            "Elini tuttuğumda, tüm dünya benimmiş gibi hissediyorum.",
+            "Sen benim en güzel tesadüfümsün.",
+            "Kalbim senin için atıyor, sadece senin için.",
+            "Seninle geçen her saniye, bir ömre bedel.",
+            "Gözlerinde kaybolmak, en sevdiğim serüven.",
+            "Sen benim hayallerimin ötesinde bir gerçeksin.",
+            "Seninle her gün, yeni bir aşk hikayesi yazmak gibi.",
+            "Varlığın, hayatıma anlam katıyor.",
+            "Sen benim için dünyanın en değerli hazinesin.",
+            "Seninle geleceğe bakmak, en güzel hayalim.",
+            "Her nefesimde sen varsın.",
+            "Seninle olmak, mutluluğun ta kendisi.",
+            "Sen benim için yazılmış en güzel şiirsin.",
+            "Kalbimin anahtarı sadece sende.",
+            "Seninle her an özel, her an benzersiz.",
+            "Gözlerin benim rehberim, yüreğin benim yuvam.",
+            "Sen benim için mucizelerden büyük bir mucizesin.",
+            "Seninle hayat daha renkli, daha güzel.",
+            "Her güne seninle başlamak, en büyük şansım.",
+            "Sen benim sonsuzluğumsun.",
+            "Kalbim senin için çarpıyor, her zaman.",
+            "Seninle her şey mümkün, her şey güzel.",
+            "Sen benim için en değerli armağansın.",
+            "Seninle aşk, sonsuz bir yolculuk.",
+            "Gülümsemen, günümün en güzel anı.",
+            "Sen benim için yazılmış en güzel kitapsın.",
+            "Seninle her an, bir şiir gibi akıyor.",
+            "Kalbimin en derin yerinde sen varsın.",
+            "Seninle olmak, en doğru karardı.",
+            "Sen benim için her şeysin.",
+            "Seninle geleceğe bakınca, sadece mutluluk görüyorum.",
+            "Her sabah seninle uyanmak istiyorum.",
+            "Sen benim için en güzel hediyesin.",
+            "Seninle aşk, her gün yeniden doğuyor.",
+            "Gözlerinde kendimi buluyorum.",
+            "Sen benim kalbimin kraliçesisin.",
+            "Seninle her gün sevgililer günü.",
+            "Varlığın benim için her şey demek.",
+            "Seninle hayat bir masal gibi.",
+            "Sen benim için en değerli varlıksın.",
+            "Seninle aşk, sonsuz ve kusursuz.",
+            "Her anında sen varsın, düşüncelerimde, hayallerimde.",
+            "Seninle olmak, en büyük mutluluk.",
+            "Sen benim için yazılmış en güzel şarkısın.",
+            "Kalbim senin için atıyor, sadece senin için.",
+            "Seninle her şey daha anlamlı.",
+            "Sen benim için en değerli incimsin.",
+            "Seninle aşk, her gün daha da büyüyor.",
+            "Gülüşün, kalbime dokunuyor.",
+            "Sen benim için en güzel gerçeksin.",
+            "Seninle geleceğe bakmak, en tatlı hayal.",
+            "Her nefeste sen varsın.",
+            "Seninle olmak, yaşamın anlamı.",
+            "Sen benim için en değerli hazinesin.",
+            "Seninle her an, bir armağan gibi.",
+            "Kalbimin tek sahibi sensin.",
+            "Seninle hayat daha güzel, daha anlamlı.",
+            "Sen benim için mucizelerden de öte.",
+            "Seninle aşk, ebedi ve değişmez.",
+            "Gözlerinde kaybolmak, en sevdiğim an.",
+            "Sen benim için en değerli varlıksın.",
+            "Seninle her gün, yeni bir başlangıç.",
+            "Varlığın hayatıma renk katıyor.",
+            "Seninle olmak, en doğru seçim.",
+            "Sen benim için her şey ve daha fazlası.",
+            "Seninle geleceğe bakınca, sadece aşk görüyorum.",
+            "Her sabah seninle başlamak istiyorum.",
+            "Sen benim için en güzel sürprizsin.",
+            "Seninle aşk, her gün daha da derinleşiyor.",
+            "Kalbimde sadece sen varsın.",
+            "Seninle her an özel ve unutulmaz.",
+            "Sen benim için en değerli hazinesin.",
+            "Seninle hayat bir rüya gibi akıyor.",
+            "Gülüşün, dünyamı aydınlatıyor.",
+            "Sen benim için en güzel hediye.",
+            "Seninle aşk, sonsuz bir serüven.",
+            "Her anında seninle olmak istiyorum.",
+            "Sen benim kalbimin tek sahibisin.",
+            "Seninle her gün bir bayram.",
+            "Varlığın benim için paha biçilmez.",
+            "Seninle olmak, en büyük şans.",
+            "Sen benim için yazılmış en güzel roman.",
+            "Seninle aşk, her gün yeniden başlıyor.",
+            "Kalbim senin için çarpıyor, hep senin için.",
+            "Seninle her şey mümkün.",
+            "Sen benim için en değerli mücevhersin.",
+            "Seninle hayat daha renkli.",
+            "Gözlerinde kendimi görüyorum.",
+            "Sen benim için en güzel tesadüf.",
+            "Seninle geleceğe bakmak, en tatlı düş.",
+            "Her nefeste senin kokunu alıyorum.",
+            "Seninle olmak, mutluluğun kendisi.",
+            "Sen benim için en değerli armağan.",
+            "Seninle her an, bir şiir gibi.",
+            "Kalbimin derinliklerinde sen varsın.",
+            "Seninle hayat bir masal.",
+            "Sen benim için mucizelerden büyük.",
+            "Seninle aşk, ebediyen sürecek.",
+            "Gülümsemen, günümü güzelleştiriyor.",
+            "Sen benim için en değerli varlık.",
+            "Seninle her gün, yeni bir aşk hikayesi.",
+            "Varlığın hayatıma anlam katıyor.",
+            "Seninle olmak, en doğru karar.",
+            "Sen benim için her şeysin.",
+            "Seninle geleceğe bakınca, sadece mutluluk görüyorum.",
+            "Her sabah seninle uyanmak, en güzel rüya.",
+            "Sen benim için en güzel hediye.",
+            "Seninle aşk, her gün daha da güçleniyor.",
+            "Kalbimde sadece sen.",
+            "Seninle her an, paha biçilmez.",
+            "Sen benim için en değerli hazine.",
+            "Seninle hayat bir rüya gibi.",
+            "Gülüşün, kalbime dokunuyor.",
+            "Sen benim için en güzel gerçek.",
+            "Seninle aşk, sonsuz ve ebedi.",
+            "Her anında sen varsın, hayallerimde, düşlerimde.",
+            "Seninle olmak, en büyük şans.",
+            "Sen benim için yazılmış en güzel şarkı.",
+            "Kalbim senin için atıyor, sadece senin için.",
+            "Seninle her şey daha anlamlı.",
+            "Sen benim için en değerli inci.",
+            "Seninle hayat daha güzel.",
+            "Gözlerinde kaybolmak, en sevdiğim an.",
+            "Sen benim için en değerli varlık.",
+            "Seninle her gün, yeni bir macera.",
+            "Varlığın hayatıma renk katıyor.",
+            "Seninle olmak, en doğru seçim.",
+            "Sen benim için her şey ve daha fazlası.",
+            "Seninle geleceğe bakınca, sadece aşk görüyorum.",
+            "Her sabah seninle başlamak istiyorum.",
+            "Sen benim için en güzel sürpriz.",
+            "Seninle aşk, her gün daha da derinleşiyor.",
+            "Kalbimde sadece sen varsın.",
+            "Seninle her an özel.",
+            "Sen benim için en değerli hazine.",
+            "Seninle hayat bir harika.",
+            "Gülüşün, dünyamı aydınlatıyor.",
+            "Sen benim için en güzel armağan.",
+            "Seninle aşk, sonsuz bir yolculuk.",
+            "Her anında seninle olmak istiyorum.",
+            "Sen benim kalbimin kraliçesi.",
+            "Seninle her gün bir kutlama.",
+            "Varlığın benim için paha biçilmez.",
+            "Seninle olmak, en büyük mutluluk.",
+            "Sen benim için yazılmış en güzel hikaye.",
+            "Seninle aşk, her gün yeniden doğuyor.",
+            "Kalbim senin için çarpıyor, hep.",
+            "Seninle her şey mümkün ve güzel.",
+            "Sen benim için en değerli mücevher.",
+            "Seninle hayat daha renkli ve anlamlı.",
+            "Gözlerinde kendimi buluyorum.",
+            "Sen benim için en güzel tesadüf.",
+            "Seninle geleceğe bakmak, en tatlı hayal.",
+            "Her nefeste sen varsın.",
+            "Seninle olmak, yaşamın özü.",
+            "Sen benim için en değerli varlık.",
+            "Seninle her an, bir armağan.",
+            "Kalbimin tek sahibi sensin.",
+            "Seninle hayat daha güzel.",
+            "Sen benim için mucizelerden de öte bir mucize.",
+            "Seninle aşk, ebedi.",
+            "Gülümsemen, kalbime işliyor.",
+            "Sen benim için en değerli hazine.",
+            "Seninle her gün, yeni bir sayfa.",
+            "Varlığın hayatıma anlam veriyor.",
+            "Seninle olmak, en doğru tercih.",
+            "Sen benim için her şey.",
+            "Seninle geleceğe bakınca, sadece sevgi görüyorum.",
+            "Her sabah seninle uyanmak, en büyük şans.",
+            "Sen benim için en güzel hediye.",
+            "Seninle aşk, her gün daha da büyüyor.",
+            "Kalbimde sadece sen yoksun.",
+            "Seninle her an, unutulmaz.",
+            "Sen benim için en değerli armağan.",
+            "Seninle hayat bir masal gibi akıyor.",
+            "Gülüşün, ruhuma dokunuyor.",
+            "Sen benim için en güzel gerçek.",
+            "Seninle aşk, sonsuz ve değişmez.",
+            "Her anında sen varsın, kalbimde, aklımda.",
+            "Seninle olmak, en büyük nimet.",
+            "Sen benim için yazılmış en güzel melodi.",
+            "Kalbim senin için atıyor, her zaman.",
+            "Seninle her şey daha güzel.",
+            "Sen benim için en değerli inci.",
+            "Seninle hayat daha anlamlı.",
+            "Gözlerinde kaybolmak, en sevdiğim serüven.",
+            "Sen benim için en değerli varlık.",
+            "Seninle her gün, yeni bir umut.",
+            "Varlığın hayatıma ışık tutuyor.",
+            "Seninle olmak, en doğru yol.",
+            "Sen benim için her şey ve daha fazlası.",
+            "Seninle geleceğe bakınca, sadece huzur görüyorum.",
+            "Her sabah seninle başlamak, en güzel duygu.",
+            "Sen benim için en güzel sürpriz.",
+            "Seninle aşk, her gün daha da olgunlaşıyor.",
+            "Kalbimde sadece sen.",
+            "Seninle her an, değerli.",
+            "Sen benim için en değerli hazine.",
+            "Seninle hayat bir mucize.",
+            "Gülüşün, dünyamı güzelleştiriyor.",
+            "Sen benim için en güzel hediye.",
+            "Seninle aşk, sonsuz bir dans.",
+            "Her anında seninle olmak istiyorum.",
+            "Sen benim kalbimin tek prensi.",
+            "Seninle her gün bir şenlik.",
+            "Varlığın benim için her şey demek.",
+            "Seninle olmak, en büyük bereket.",
+            "Sen benim için yazılmış en güzel şiir.",
+            "Seninle aşk, her gün yeniden filizleniyor.",
+            "Kalbim senin için çarpıyor, daima.",
+            "Seninle her şey gerçek olabiliyor.",
+            "Sen benim için en değerli elmas.",
+            "Seninle hayat daha parlak.",
+            "Gözlerinde huzuru buluyorum.",
+            "Sen benim için en güzel rastlantı.",
+            "Seninle geleceğe bakmak, en güzel düş.",
+            "Her nefeste senin varlığını hissediyorum.",
+            "Seninle olmak, hayatın tadı.",
+            "Sen benim için en değerli varlık.",
+            "Seninle her an, bir nimet.",
+            "Kalbimin tek prensi sensin.",
+            "Seninle hayat daha tatlı.",
+            "Sen benim için mucizelerin en büyüğü.",
+            "Seninle aşk, sonsuza kadar.",
+            "Gülümsemen, yüreğime işliyor.",
+            "Sen benim için en değerli hazine.",
+            "Seninle her gün, yeni bir bereket.",
+            "Varlığın hayatıma güzellik katıyor.",
+            "Seninle olmak, en güzel yolculuk.",
+            "Sen benim için her şey.",
+            "Seninle geleceğe bakınca, sadece aşk ve huzur görüyorum.",
+            "Her sabah seninle uyanmak, en büyük lütuf.",
+            "Sen benim için en güzel armağan.",
+            "Seninle aşk, her gün daha da zenginleşiyor.",
+            "Kalbimde sadece sen.",
+            "Seninle her an, kutsal.",
+            "Sen benim için en değerli nimet.",
+            "Seninle hayat bir şiir gibi.",
+            "Gülüşün, canıma can katıyor.",
+            "Sen benim için en güzel hakikat.",
+            "Seninle aşk, sonsuz ve tertemiz.",
+            "Her anında sen varsın, ruhum senin.",
+            "Seninle olmak, en büyük ödül.",
+            "Sen benim için yazılmış en güzel türkü.",
+            "Kalbim senin için atıyor, her daim.",
+            "Seninle her şey daha değerli.",
+            "Sen benim için en kıymetli taş.",
+            "Seninle hayat daha bereketli.",
+            "Gözlerinde sevgiyi görüyorum.",
+            "Sen benim için en güzel kader.",
+            "Seninle geleceğe bakmak, en tatlı vaziyet.",
+            "Her nefeste senin esintini alıyorum.",
+            "Seninle olmak, varoluşun anlamı.",
+            "Sen benim için en değerli emanet.",
+            "Seninle her an, bir lütuf.",
+            "Kalbimin tek hükümdarı sensin.",
+            "Seninle hayat daha hoş.",
+            "Sen benim için mucizelerin en güzeli.",
+            "Seninle aşk, ta ezelden ebede.",
+            "Gülümsemen, ruhumda yankılanıyor.",
+            "Sen benim için en değerli define.",
+            "Seninle her gün, yeni bir şükür.",
+            "Varlığın hayatıma bereket getiriyor.",
+            "Seninle olmak, en güzel nasip.",
+            "Sen benim için her şey ve daha ötesi.",
+            "Seninle geleceğe bakınca, sadece sevgi ve saadet görüyorum.",
+            "Her sabah seninle başlamak, en büyük nimet.",
+            "Sen benim için en güzel bahşiş.",
+            "Seninle aşk, her gün daha da saflaşıyor.",
+            "Kalbimde sadece sen mevcutsun.",
+            "Seninle her an, mübarek.",
+            "Sen benim için en değerli lütuf.",
+            "Seninle hayat bir nağme gibi.",
+            "Gülüşün, varlığıma hayat veriyor.",
+            "Sen benim için en güzel sır.",
+            "Seninle aşk, sonsuz ve pak.",
+            "Her anında sen varsın, canım senin.",
+            "Seninle olmak, en büyük ganimet.",
+            "Sen benim için yazılmış en güzel destan.",
+            "Kalbim senin için çarpıyor, ebediyen.",
+            "Seninle her şey daha kıymetli.",
+            "Sen benim için en nadide inci.",
+            "Seninle hayat daha nurlu.",
+            "Gözlerinde saadeti buluyorum.",
+            "Sen benim için en güzel talih.",
+            "Seninle geleceğe bakmak, en hoş ümit.",
+            "Her nefeste senin ışığını hissediyorum.",
+            "Seninle olmak, hayatın özü.",
+            "Sen benim için en değerli vedia.",
+            "Seninle her an, bir ihsan.",
+            "Kalbimin tek sultanı sensin.",
+            "Seninle hayat daha latif.",
+            "Sen benim için mucizelerin en şereflisi.",
+            "Seninle aşk, semavi ve ebedi.",
+            "Gülümsemen, ruhuma huzur veriyor.",
+            "Sen benim için en değerli hazine ve nimet.",
+            "Seninle her gün, yeni bir hamd.",
+            "Varlığın hayatıma nur katıyor.",
+            "Seninle olmak, en güzel kısmet.",
+            "Sen benim için her şey ve sonsuz.",
+            "Seninle geleceğe bakınca, sadece muhabbet ve huzur görüyorum.",
+            "Her sabah seninle uyanmak, en büyük devlet.",
+            "Sen benim için en güzel atiyye.",
+            "Seninle aşk, her gün daha da yücelmekte.",
+            "Kalbimde sadece sen.",
+            "Seninle her an, mukaddes.",
+            "Sen benim için en değerli bağış.",
+            "Seninle hayat bir ilahi gibi.",
+            "Gülüşün, özüme neşe katıyor.",
+            "Sen benim için en güzel esrar.",
+            "Seninle aşk, sonsuz ve mutlak.",
+            "Her anında sen varsın, özüm senin.",
+            "Seninle olmak, en büyük kazanım.",
+            "Sen benim için yazılmış en güzel efsane.",
+            "Kalbim senin için atıyor, her zaman ve her yerde.",
+            "Seninle her şey daha bereketli ve anlamlı.",
+            "Sen benim için en eşsiz cevher.",
+            "Seninle hayat daha aydınlık ve güzel.",
+            "Gözlerinde mutluluğu görüyorum, seninle her an mutluyum.",
+            "Sen benim için en güzel yazgı ve en değerli hediye.",
+            "Seninle geleceğe bakmak, en tatlı rüya ve gerçek.",
+            "Her nefeste senin sevgini hissediyorum, sen benim her şeyimsin.",
+            "Seninle olmak, hayatın en güzel anlamı ve en büyük mutluluk.",
+            "Sen benim için en değerli varlık, en güzel aşk ve sonsuza kadar seveceğim tek insan.",
+            "Seninle her an, bir kutlama ve şükran, seni sonsuza kadar seviyorum.",
+            "Kalbimin tek ve ebedi sahibi sensin, Asya.",
+            "Seninle hayat her gün daha güzel, daha anlamlı ve daha değerli oluyor.",
+            "Sen benim için mucizelerin en büyüğü, aşkın en saf hali ve mutluluğun ta kendisisin.",
+            "Seninle aşk, ta başlangıcından sonsuza kadar sürecek olan ebedi bir bağ.",
+            "Gülümsemen, dünyamı aydınlatıyor ve kalbime sonsuz huzur veriyor.",
+            "Sen benim için en değerli hazine, en güzel hediye ve hayatımın anlamısın.",
+            "Seninle her gün, yeni bir aşk hikayesi, yeni bir mutluluk ve yeni bir umut.",
+            "Varlığın hayatıma renk, anlam ve sonsuz bir sevgi katıyor, seni çok seviyorum.",
+            "Seninle olmak, en doğru karar, en güzel yolculuk ve en büyük şanstı.",
+            "Sen benim için her şeysin, her şeyden değerlisin ve her zaman seveceğim tek kişisin.",
+            "Seninle geleceğe bakınca, sadece aşk, mutluluk, huzur ve sonsuz bir birliktelik görüyorum, seni sonsuz seviyorum Asya."
+        ];
+
+        // Kalp yağmuru oluştur
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            heart.style.opacity = Math.random() * 0.5 + 0.3;
+            
+            const size = Math.random() * 15 + 10;
+            heart.style.width = size + 'px';
+            heart.style.height = size + 'px';
+            
+            heart.style.setProperty('--x', (Math.random() - 0.5) * 100 + 'px');
+            
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 7000);
+        }
+
+        // Sürekli kalp yağmuru
+        setInterval(createHeart, 300);
+
+        // Bugünün sözünü göster
+        function showTodayQuote() {
+            const today = new Date();
+            const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
+            const index = (dayOfYear - 1) % 365;
+            
+            const month = today.getMonth(); // 0-11 arası (0 = Ocak)
+            const day = today.getDate();
+            
+            // 16 Nisan - Doğum Günü
+            if (month === 3 && day === 16) {
+                document.getElementById('quoteDisplay').innerHTML = `
+                    <div style="font-size: 1.5em; color: #c44569; margin-bottom: 20px;">
+                        🎂🎉 DOĞUM GÜNÜN KUTLU OLSUN ASYA! 🎉🎂
+                    </div>
+                    <div style="font-size: 1.2em; line-height: 1.8;">
+                        Bugün dünyanın en özel günü, çünkü bugün sen doğdun! 
+                        Hayatıma gelen en güzel hediye sensin. 
+                        Her yaşın daha güzel, her anın daha değerli olsun. 
+                        Seni sonsuza kadar seviyorum, doğum günün kutlu olsun canım benim! 
+                        🎈💖🌟
+                    </div>
+                    <div style="margin-top: 20px; font-size: 0.9em; color: #c44569;">
+                        — Sana Aşık Birinden 💕
+                    </div>
+                `;
+            }
+            // 10 Kasım - Atatürk'ü Anma Günü
+            else if (month === 10 && day === 10) {
+                document.getElementById('quoteDisplay').innerHTML = `
+                    <div style="font-size: 1.4em; color: #000; margin-bottom: 20px;">
+                        🇹🇷 10 Kasım - Atatürk'ü Saygı ve Minnetle Anıyoruz 🇹🇷
+                    </div>
+                    <div style="font-size: 1.1em; line-height: 1.8; color: #333;">
+                        Bugün hüzünlü bir gün... Ulu Önderimiz Mustafa Kemal Atatürk'ü saygı, minnet ve özlemle anıyoruz.
+                        <br><br>
+                        "Ne mutlu Türküm diyene..."
+                    </div>
+                    <div style="margin-top: 20px; font-size: 0.9em; color: #666;">
+                        🕯️ 1881 - 1938 🕯️
+                    </div>
+                `;
+            }
+            // 29 Ekim - Cumhuriyet Bayramı
+            else if (month === 9 && day === 29) {
+                document.getElementById('quoteDisplay').innerHTML = `
+                    <div style="font-size: 1.5em; color: #c44569; margin-bottom: 20px;">
+                        🇹🇷🎉 29 EKİM CUMHURİYET BAYRAMI KUTLU OLSUN! 🎉🇹🇷
+                    </div>
+                    <div style="font-size: 1.2em; line-height: 1.8;">
+                        Cumhuriyetimizin yıldönümü kutlu olsun canım! 
+                        Bu kutlu günü seninle birlikte kutlamanın gururunu yaşıyorum. 
+                        Yaşasın Cumhuriyet! 🎊
+                    </div>
+                    <div style="margin-top: 20px; font-size: 0.9em; color: #c44569;">
+                        — 29 Ekim 1923 💕
+                    </div>
+                `;
+            }
+            // 23 Nisan - Çocuk Bayramı
+            else if (month === 3 && day === 23) {
+                document.getElementById('quoteDisplay').innerHTML = `
+                    <div style="font-size: 1.5em; color: #c44569; margin-bottom: 20px;">
+                        🎈🎨 23 NİSAN ULUSAL EGEMENLİK VE ÇOCUK BAYRAMI KUTLU OLSUN! 🎨🎈
+                    </div>
+                    <div style="font-size: 1.2em; line-height: 1.8;">
+                        İçindeki çocuğu hiç kaybetme aşkım! 
+                        Senin o masum gülüşün, şakacı halin ve çocuksu sevgin beni çok mutlu ediyor. 
+                        Hem büyük kadınımı, hem de içindeki o sevimli çocuğu çok seviyorum! 💕🧸
+                    </div>
+                    <div style="margin-top: 20px; font-size: 0.9em; color: #c44569;">
+                        — Seni Her Halinle Seviyorum 💖
+                    </div>
+                `;
+            }
+            // 8 Mart - Dünya Kadınlar Günü
+            else if (month === 2 && day === 8) {
+                document.getElementById('quoteDisplay').innerHTML = `
+                    <div style="font-size: 1.5em; color: #c44569; margin-bottom: 20px;">
+                        🌺💐 8 MART DÜNYA KADINLAR GÜNÜ KUTLU OLSUN! 💐🌺
+                    </div>
+                    <div style="font-size: 1.2em; line-height: 1.8;">
+                        Dünyamı aydınlatan, hayatıma anlam katan, güçlü ve muhteşem kadınım!
+                        Sen sadece benim kadınım değil, aynı zamanda benim en büyük ilham kaynağımsın.
+                        Kadınlar günün kutlu olsun canım, seni çok ama çok seviyorum! 👑💕
+                    </div>
+                    <div style="margin-top: 20px; font-size: 0.9em; color: #c44569;">
+                        — Sana Hayran Olan Birisinden 💖
+                    </div>
+                `;
+            }
+            // 30 Ağustos - Zafer Bayramı
+            else if (month === 7 && day === 30) {
+                document.getElementById('quoteDisplay').innerHTML = `
+                    <div style="font-size: 1.5em; color: #c44569; margin-bottom: 20px;">
+                        🇹🇷⭐ 30 AĞUSTOS ZAFER BAYRAMI KUTLU OLSUN! ⭐🇹🇷
+                    </div>
+                    <div style="font-size: 1.2em; line-height: 1.8;">
+                        Büyük zaferimizin yıldönümü kutlu olsun aşkım! 
+                        Senin gibi değerli bir insanla bu günü kutlamak beni onurlandırıyor. 
+                        Zaferimiz daim olsun! 🎊🇹🇷
+                    </div>
+                    <div style="margin-top: 20px; font-size: 0.9em; color: #c44569;">
+                        — 30 Ağustos 1922 💕
+                    </div>
+                `;
+            }
+            // 15 Temmuz - Demokrasi ve Milli Birlik Günü
+            else if (month === 6 && day === 15) {
+                document.getElementById('quoteDisplay').innerHTML = `
+                    <div style="font-size: 1.4em; color: #c44569; margin-bottom: 20px;">
+                        🇹🇷🕊️ 15 TEMMUZ DEMOKRASİ VE MİLLİ BİRLİK GÜNÜ 🕊️🇹🇷
+                    </div>
+                    <div style="font-size: 1.2em; line-height: 1.8;">
+                        Demokrasimize sahip çıkan tüm kahramanlarımızı saygı ve minnetle anıyoruz.
+                        Bu vatan bizim, bu bayrak bizim! 
+                        Şehitlerimize rahmet, gazilerimize sağlık ve şifa diliyorum. 🙏🇹🇷
+                    </div>
+                    <div style="margin-top: 20px; font-size: 0.9em; color: #666;">
+                        — Vatan İçin Canını Verenlere Sonsuz Saygı 🕯️
+                    </div>
+                `;
+            }
+            // Normal günler
+            else {
+                document.getElementById('quoteDisplay').innerHTML = `"${dailyQuotes[index]}"<br><br><small style="color: #c44569;">— ${dayOfYear}. Gün</small>`;
+            }
+        }
+
+        // Rastgele söz göster
+        function showRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * 365);
+            document.getElementById('quoteDisplay').innerHTML = `"${dailyQuotes[randomIndex]}"<br><br><small style="color: #c44569;">— ${randomIndex + 1}. Gün</small>`;
+        }
+
+        // Belirli bir günün sözünü göster
+        function showDayQuote() {
+            const dayInput = document.getElementById('dayInput');
+            const day = parseInt(dayInput.value);
+            
+            if (day >= 1 && day <= 365) {
+                // Özel günler kontrolü
+                let specialMessage = getSpecialDayMessage(day);
+                
+                if (specialMessage) {
+                    document.getElementById('quoteDisplay').innerHTML = specialMessage;
+                } else {
+                    document.getElementById('quoteDisplay').innerHTML = `"${dailyQuotes[day - 1]}"<br><br><small style="color: #c44569;">— ${day}. Gün</small>`;
+                }
+            } else {
+                document.getElementById('quoteDisplay').innerHTML = '<span style="color: #c44569;">Lütfen 1-365 arası bir sayı girin</span>';
+            }
+        }
+        
+        // Özel günler için mesaj döndür
+        function getSpecialDayMessage(dayOfYear) {
+            // 8 Mart - Kadınlar Günü (67. gün)
+            if (dayOfYear === 67 || dayOfYear === 68) {
+                return `
+                    <div style="font-size: 1.5em; color: #c44569; margin-bottom: 20px;">
+                        🌺💐 8 MART DÜNYA KADINLAR GÜNÜ KUTLU OLSUN! 💐🌺
+                    </div>
+                    <div style="font-size: 1.2em; line-height: 1.8;">
+                        Dünyamı aydınlatan, hayatıma anlam katan, güçlü ve muhteşem kadınım!
+                        Sen sadece benim kadınım değil, aynı zamanda benim en büyük ilham kaynağımsın.
+                        Kadınlar günün kutlu olsun canım, seni çok ama çok seviyorum! 👑💕
+                    </div>
+                    <div style="margin-top: 20px; font-size: 0.9em; color: #c44569;">
+                        — Sana Hayran Olan Birisinden 💖
+                    </div>
+                `;
+            }
+            // 16 Nisan - Doğum Günü (106-107. gün)
+            else if (dayOfYear === 106 || dayOfYear === 107) {
+                return `
+                    <div style="font-size: 1.5em; color: #c44569; margin-bottom: 20px;">
+                        🎂🎉 DOĞUM GÜNÜN KUTLU OLSUN ASYA! 🎉🎂
+                    </div>
+                    <div style="font-size: 1.2em; line-height: 1.8;">
+                        Bugün dünyanın en özel günü, çünkü bugün sen doğdun! 
+                        Hayatıma gelen en güzel hediye sensin. 
+                        Her yaşın daha güzel, her anın daha değerli olsun. 
+                        Seni sonsuza kadar seviyorum, doğum günün kutlu olsun canım benim! 
+                        🎈💖🌟
+                    </div>
+                    <div style="margin-top: 20px; font-size: 0.9em; color: #c44569;">
+                        — Sana Aşık Birinden 💕
+                    </div>
+                `;
+            }
+            // 23 Nisan - Çocuk Bayramı (113-114. gün)
+            else if (dayOfYear === 113 || dayOfYear === 114) {
+                return `
+                    <div style="font-size: 1.5em; color: #c44569; margin-bottom: 20px;">
+                        🎈🎨 23 NİSAN ULUSAL EGEMENLİK VE ÇOCUK BAYRAMI KUTLU OLSUN! 🎨🎈
+                    </div>
+                    <div style="font-size: 1.2em; line-height: 1.8;">
+                        İçindeki çocuğu hiç kaybetme aşkım! 
+                        Senin o masum gülüşün, şakacı halin ve çocuksu sevgin beni çok mutlu ediyor. 
+                        Hem büyük kadınımı, hem de içindeki o sevimli çocuğu çok seviyorum! 💕🧸
+                    </div>
+                    <div style="margin-top: 20px; font-size: 0.9em; color: #c44569;">
+                        — Seni Her Halinle Seviyorum 💖
+                    </div>
+                `;
+            }
+            // 15 Temmuz - Demokrasi Günü (196-197. gün)
+            else if (dayOfYear === 196 || dayOfYear === 197) {
+                return `
+                    <div style="font-size: 1.4em; color: #c44569; margin-bottom: 20px;">
+                        🇹🇷🕊️ 15 TEMMUZ DEMOKRASİ VE MİLLİ BİRLİK GÜNÜ 🕊️🇹🇷
+                    </div>
+                    <div style="font-size: 1.2em; line-height: 1.8;">
+                        Demokrasimize sahip çıkan tüm kahramanlarımızı saygı ve minnetle anıyoruz.
+                        Bu vatan bizim, bu bayrak bizim! 
+                        Şehitlerimize rahmet, gazilerimize sağlık ve şifa diliyorum. 🙏🇹🇷
+                    </div>
+                    <div style="margin-top: 20px; font-size: 0.9em; color: #666;">
+                        — Vatan İçin Canını Verenlere Sonsuz Saygı 🕯️
+                    </div>
+                `;
+            }
+            // 30 Ağustos - Zafer Bayramı (242-243. gün)
+            else if (dayOfYear === 242 || dayOfYear === 243) {
+                return `
+                    <div style="font-size: 1.5em; color: #c44569; margin-bottom: 20px;">
+                        🇹🇷⭐ 30 AĞUSTOS ZAFER BAYRAMI KUTLU OLSUN! ⭐🇹🇷
+                    </div>
+                    <div style="font-size: 1.2em; line-height: 1.8;">
+                        Büyük zaferimizin yıldönümü kutlu olsun aşkım! 
+                        Senin gibi değerli bir insanla bu günü kutlamak beni onurlandırıyor. 
+                        Zaferimiz daim olsun! 🎊🇹🇷
+                    </div>
+                    <div style="margin-top: 20px; font-size: 0.9em; color: #c44569;">
+                        — 30 Ağustos 1922 💕
+                    </div>
+                `;
+            }
+            // 29 Ekim - Cumhuriyet Bayramı (302-303. gün)
+            else if (dayOfYear === 302 || dayOfYear === 303) {
+                return `
+                    <div style="font-size: 1.5em; color: #c44569; margin-bottom: 20px;">
+                        🇹🇷🎉 29 EKİM CUMHURİYET BAYRAMI KUTLU OLSUN! 🎉🇹🇷
+                    </div>
+                    <div style="font-size: 1.2em; line-height: 1.8;">
+                        Cumhuriyetimizin yıldönümü kutlu olsun canım! 
+                        Bu kutlu günü seninle birlikte kutlamanın gururunu yaşıyorum. 
+                        Yaşasın Cumhuriyet! 🎊
+                    </div>
+                    <div style="margin-top: 20px; font-size: 0.9em; color: #c44569;">
+                        — 29 Ekim 1923 💕
+                    </div>
+                `;
+            }
+            // 10 Kasım - Atatürk'ü Anma (314-315. gün)
+            else if (dayOfYear === 314 || dayOfYear === 315) {
+                return `
+                    <div style="font-size: 1.4em; color: #000; margin-bottom: 20px;">
+                        🇹🇷 10 Kasım - Atatürk'ü Saygı ve Minnetle Anıyoruz 🇹🇷
+                    </div>
+                    <div style="font-size: 1.1em; line-height: 1.8; color: #333;">
+                        Bugün hüzünlü bir gün... Ulu Önderimiz Mustafa Kemal Atatürk'ü saygı, minnet ve özlemle anıyoruz.
+                        <br><br>
+                        "Ne mutlu Türküm diyene..."
+                    </div>
+                    <div style="margin-top: 20px; font-size: 0.9em; color: #666;">
+                        🕯️ 1881 - 1938 🕯️
+                    </div>
+                `;
+            }
+            
+            return null; // Özel gün değilse null döndür
+        }
+
+        // Sayfa yüklendiğinde bugünün sözünü göster
+        window.addEventListener('load', () => {
+            setTimeout(showTodayQuote, 1000);
+        });
+    </script>
+</body>
+</html>
