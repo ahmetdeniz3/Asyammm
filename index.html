@@ -383,7 +383,7 @@
             <h2>En Değerli Hazinem 💕</h2>
             <p>
                 Hayatım, her gün seninle geçirdiğim her an benim için bir mucize. 
-                Gülüşün güneşim, sesini duymak en güzel melodim. 
+                Gülüşün güneşimi, sesini duymak en güzel melodim. 
                 Seninle olmak, dünyanın en şanslı insanı olmak demek. 
                 Seni seviyorum, bugün de, yarın da, her zaman...
             </p>
@@ -422,7 +422,12 @@
             </div>
             <div class="quote-controls">
                 <button class="btn" onclick="showTodayQuote()">📅 Bugünün Sözü</button>
-                <button class="btn" onclick="showDayQuote()">🎲 Rastgele Söz (Günde 1 kere bas pls)</button>
+                <button class="btn" onclick="showRandomQuote()">🎲 Rastgele Söz</button>
+            </div>
+            <div class="day-selector">
+                <label style="color: #c44569; font-weight: bold;">Gün seç:</label>
+                <input type="number" id="dayInput" min="1" max="365" placeholder="1-365">
+                <button class="btn" onclick="showDayQuote()">Göster</button>
             </div>
         </div>
 
@@ -642,7 +647,7 @@
             "Sen benim için en güzel hediye.",
             "Seninle aşk, sonsuz bir dans.",
             "Her anında seninle olmak istiyorum.",
-            "Sen benim kalbimin tek prensesi.",
+            "Sen benim kalbimin tek prensi.",
             "Seninle her gün bir şenlik.",
             "Varlığın benim için her şey demek.",
             "Seninle olmak, en büyük bereket.",
@@ -659,7 +664,7 @@
             "Seninle olmak, hayatın tadı.",
             "Sen benim için en değerli varlık.",
             "Seninle her an, bir nimet.",
-            "Kalbimin tek prensesi sensin.",
+            "Kalbimin tek prensi sensin.",
             "Seninle hayat daha tatlı.",
             "Sen benim için mucizelerin en büyüğü.",
             "Seninle aşk, sonsuza kadar.",
@@ -932,20 +937,6 @@
                     </div>
                 `;
             }
-                 // 31 Ağustos - Benim Doğum Günüm
-            else if (month === 7 && day === 31) {
-                document.getElementById('quoteDisplay').innerHTML = `
-                    <div style="font-size: 1.5em; color: #c44569; margin-bottom: 20px;">
-                       İyiki Doğmuşum
-                    </div>
-                    <div style="font-size: 1.2em; line-height: 1.8;">
-                        Doğduğum ve senin gibi çok güzel bir kız arkadaşım olduğu için çok şanslıyım
-                    </div>
-                    <div style="margin-top: 20px; font-size: 0.9em; color: #c44569;">
-                       Seni Çok Seviyorum 💕
-                    </div>
-                `;
-            }
             // 15 Temmuz - Demokrasi ve Milli Birlik Günü
             else if (month === 6 && day === 15) {
                 document.getElementById('quoteDisplay').innerHTML = `
@@ -976,8 +967,8 @@
 
         // Belirli bir günün sözünü göster
         function showDayQuote() {
-            const dayInput = 243;
-            const day = dayInput;
+            const dayInput = document.getElementById('dayInput');
+            const day = parseInt(dayInput.value);
             
             if (day >= 1 && day <= 365) {
                 // Özel günler kontrolü
@@ -1074,20 +1065,6 @@
                     </div>
                     <div style="margin-top: 20px; font-size: 0.9em; color: #c44569;">
                         — 30 Ağustos 1922 💕
-                    </div>
-                `;
-            }
-                  // Doğum günüm
-            else if (dayOfYear === 243 || dayOfYear === 244 {
-                return `
-                     <div style="font-size: 1.5em; color: #c44569; margin-bottom: 20px;">
-                       İyiki Doğmuşum
-                    </div>
-                    <div style="font-size: 1.2em; line-height: 1.8;">
-                        Doğduğum ve senin gibi çok güzel bir kız arkadaşım olduğu için çok şanslıyım
-                    </div>
-                    <div style="margin-top: 20px; font-size: 0.9em; color: #c44569;">
-                       Seni Çok Seviyorum 💕
                     </div>
                 `;
             }
