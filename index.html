@@ -1084,21 +1084,20 @@
                 `;
             }
                                 //Doğum Günüm
-           else if (dayOfYear === 243||dayOfYear === 244) {
-                return `
-                document.getElementById('quoteDisplay').innerHTML = `
-                    <div style="font-size: 1.5em; color: #c44569; margin-bottom: 20px;">
-                        Nice Senli Yıllar Bana
-                    </div>
-                    <div style="font-size: 1.2em; line-height: 1.8;">
-                    Bunlardan sizde varmı?-O zaman çeyizime koyayım dediğin gün iyiki
-                    yaşanmış seni çok seviyorum hatun.
-                    </div>
-                    <div style="margin-top: 20px; font-size: 0.9em; color: #c44569;">
-                        -31 Ağustos
-                    </div>
-                `;
-                }
+           else if (dayOfYear === 243 || dayOfYear === 244) {
+    return `
+        <div style="font-size: 1.5em; color: #c44569; margin-bottom: 20px;">
+            Nice Senli Yıllar Bana
+        </div>
+        <div style="font-size: 1.2em; line-height: 1.8;">
+            Bunlardan sizde varmı? - O zaman çeyizime koyayım dediğin gün iyi ki yaşanmış.
+            Seni çok seviyorum hatun.
+        </div>
+        <div style="margin-top: 20px; font-size: 0.9em; color: #c44569;">
+            — 31 Ağustos
+        </div>
+    `;
+}
             // 29 Ekim - Cumhuriyet Bayramı (302-303. gün)
             else if (dayOfYear === 302 || dayOfYear === 303) {
                 return `
