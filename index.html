@@ -422,7 +422,7 @@
             </div>
             <div class="quote-controls">
                 <button class="btn" onclick="showTodayQuote()">📅 Bugünün Sözü</button>
-                <button class="btn" onclick="showRandomQuote()">🎲 Rastgele Söz (Günde 1 kere bas pls)</button>
+                <button class="btn" onclick="showDayQuote()">🎲 Rastgele Söz (Günde 1 kere bas pls)</button>
             </div>
         </div>
 
@@ -932,6 +932,20 @@
                     </div>
                 `;
             }
+                 // 31 Ağustos - Benim Doğum Günüm
+            else if (month === 7 && day === 31) {
+                document.getElementById('quoteDisplay').innerHTML = `
+                    <div style="font-size: 1.5em; color: #c44569; margin-bottom: 20px;">
+                       İyiki Doğmuşum
+                    </div>
+                    <div style="font-size: 1.2em; line-height: 1.8;">
+                        Doğduğum ve senin gibi çok güzel bir kız arkadaşım olduğu için çok şanslıyım
+                    </div>
+                    <div style="margin-top: 20px; font-size: 0.9em; color: #c44569;">
+                       Seni Çok Seviyorum 💕
+                    </div>
+                `;
+            }
             // 15 Temmuz - Demokrasi ve Milli Birlik Günü
             else if (month === 6 && day === 15) {
                 document.getElementById('quoteDisplay').innerHTML = `
@@ -1060,6 +1074,20 @@
                     </div>
                     <div style="margin-top: 20px; font-size: 0.9em; color: #c44569;">
                         — 30 Ağustos 1922 💕
+                    </div>
+                `;
+            }
+                  // Doğum günüm
+            else if (dayOfYear === 243 || dayOfYear === 244 {
+                return `
+                     <div style="font-size: 1.5em; color: #c44569; margin-bottom: 20px;">
+                       İyiki Doğmuşum
+                    </div>
+                    <div style="font-size: 1.2em; line-height: 1.8;">
+                        Doğduğum ve senin gibi çok güzel bir kız arkadaşım olduğu için çok şanslıyım
+                    </div>
+                    <div style="margin-top: 20px; font-size: 0.9em; color: #c44569;">
+                       Seni Çok Seviyorum 💕
                     </div>
                 `;
             }
