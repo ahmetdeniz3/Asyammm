@@ -937,6 +937,21 @@
                     </div>
                 `;
             }
+                //Doğum Günüm
+            else if (month === 7 && day === 31) {
+                document.getElementById('quoteDisplay').innerHTML = `
+                    <div style="font-size: 1.5em; color: #c44569; margin-bottom: 20px;">
+                        Nice Senli Yıllar Bana
+                    </div>
+                    <div style="font-size: 1.2em; line-height: 1.8;">
+                    Bunlardan sizde varmı?-O zaman çeyizime koyayım dediğin gün iyiki
+                    yaşanmış seni çok seviyorum hatun.
+                    </div>
+                    <div style="margin-top: 20px; font-size: 0.9em; color: #c44569;">
+                        -31 Ağustos
+                    </div>
+                `;
+            }
             // 15 Temmuz - Demokrasi ve Milli Birlik Günü
             else if (month === 6 && day === 15) {
                 document.getElementById('quoteDisplay').innerHTML = `
@@ -1053,7 +1068,7 @@
                 `;
             }
             // 30 Ağustos - Zafer Bayramı (242-243. gün)
-            else if (dayOfYear === 242 || dayOfYear === 243) {
+            else if (dayOfYear === 242) {
                 return `
                     <div style="font-size: 1.5em; color: #c44569; margin-bottom: 20px;">
                         🇹🇷⭐ 30 AĞUSTOS ZAFER BAYRAMI KUTLU OLSUN! ⭐🇹🇷
@@ -1068,6 +1083,21 @@
                     </div>
                 `;
             }
+                                //Doğum Günüm
+           else if (dayOfYear === 243) {
+                return `
+                document.getElementById('quoteDisplay').innerHTML = `
+                    <div style="font-size: 1.5em; color: #c44569; margin-bottom: 20px;">
+                        Nice Senli Yıllar Bana
+                    </div>
+                    <div style="font-size: 1.2em; line-height: 1.8;">
+                    Bunlardan sizde varmı?-O zaman çeyizime koyayım dediğin gün iyiki
+                    yaşanmış seni çok seviyorum hatun.
+                    </div>
+                    <div style="margin-top: 20px; font-size: 0.9em; color: #c44569;">
+                        -31 Ağustos
+                    </div>
+                `;
             // 29 Ekim - Cumhuriyet Bayramı (302-303. gün)
             else if (dayOfYear === 302 || dayOfYear === 303) {
                 return `
